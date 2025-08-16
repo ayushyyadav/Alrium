@@ -10,17 +10,20 @@ const Header = async () => {
   await checkUser();
 
   return (
-    <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
-      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/">
-          <Image
-            src={"/alrium.jpeg"}
-            alt="Alrium Logo"
-            width={200}
-            height={60}
-            className="h-12 w-auto object-contain"
-          />
-        </Link>
+    <header className="sticky inset-x-0 top-0 z-50 bg-white/80 backdrop-blur border-b">
+    <nav className="container mx-auto px-4 h-24 md:h-28 flex items-center justify-between">
+      <Link href="/" className="shrink-0">
+        <Image
+          src="/alrium.jpeg"
+          alt="Alrium Logo"
+          width={600}
+          height={180}
+          className="h-20 md:h-28 w-auto object-cover"  // ⬅️ big now
+          priority
+        />
+      </Link>
+
+  
 
         {/* Navigation Links - Different for signed in/out users */}
         <div className="hidden md:flex items-center space-x-8">
